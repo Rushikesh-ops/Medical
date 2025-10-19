@@ -139,7 +139,7 @@ export default function InventoryPage() {
         </button>
       </div>
 
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-4 mt-4 mb-4">
         <button
           onClick={fetchRevenue}
           className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
@@ -193,6 +193,15 @@ export default function InventoryPage() {
             value={newItem.category}
             onChange={(e) =>
               setNewItem({ ...newItem, category: e.target.value })
+            }
+            className="border p-2 rounded-md"
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            value={newItem.price}
+            onChange={(e) =>
+              setNewItem({ ...newItem, price: Number(e.target.value) })
             }
             className="border p-2 rounded-md"
           />
