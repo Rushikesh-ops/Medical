@@ -9,6 +9,7 @@ type Item = {
   category: string;
   quantity: number;
   expiry: string;
+  price: number;
 };
 
 export default function InventoryPage() {
@@ -18,6 +19,7 @@ export default function InventoryPage() {
     category: "",
     quantity: 0,
     expiry: "",
+    price: 0,
   });
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("name");
@@ -84,7 +86,7 @@ export default function InventoryPage() {
       body: JSON.stringify(newItem),
     });
 
-    setNewItem({ name: "", category: "", quantity: 0, expiry: "" });
+    setNewItem({ name: "", category: "", quantity: 0, expiry: "" , price: 0});
     fetchItems();
   };
 
@@ -230,6 +232,9 @@ export default function InventoryPage() {
                 Category
               </th>
               <th className="py-3 px-4 text-left font-semibold text-gray-700">
+                Price
+              </th>
+              <th className="py-3 px-4 text-left font-semibold text-gray-700">
                 Quantity
               </th>
               <th className="py-3 px-4 text-left font-semibold text-gray-700">
@@ -250,6 +255,7 @@ export default function InventoryPage() {
               >
                 <td className="py-2 px-4">{item.name}</td>
                 <td className="py-2 px-4">{item.category}</td>
+                <td className="py-2 px-4">{item.price}</td>
                 <td className="py-2 px-4">{item.quantity}</td>
                 <td className="py-2 px-4">{item.expiry}</td>
                 <td className="py-2 px-4 text-center">
