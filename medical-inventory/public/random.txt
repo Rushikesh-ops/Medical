@@ -1,0 +1,8 @@
+pravin
+OWVTe8xEBpDR9tNO
+
+
+mongodb+srv://pravin:OWVTe8xEBpDR9tNO@medicine-inventory.kfstqvd.mongodb.net/?retryWrites=true&w=majority&appName=medicine-inventory
+
+mongodb+srv://pravin:OWVTe8xEBpDR9tNO@medicine-inventory.kfstqvd.mongodb.net/
+
