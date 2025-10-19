@@ -59,7 +59,9 @@ export default function InventoryPage() {
 
   //Experimental phase *****************************
   async function handleSell(entries: any[]) {
-    const res = await fetch("/api/items", {
+
+    console.log("Calling from page" + entries);
+    const res = await fetch("/api/inventory", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sales: entries }),
@@ -339,7 +341,7 @@ export default function InventoryPage() {
       {showSellModal && (
         <SellModal
           onClose={() => setShowSellModal(false)}
-          onSell={handleSell}
+          onSold={handleSell}
         />
       )}
     </div>

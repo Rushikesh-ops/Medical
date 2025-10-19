@@ -11,7 +11,7 @@ export default function SellModal({ onClose, onSold }: any) {
   }, []);
 
   async function fetchItems() {
-    const res = await fetch("/api/items");
+    const res = await fetch("/api/inventory");
     const data = await res.json();
     setItems(data.items);
   }
@@ -35,12 +35,13 @@ export default function SellModal({ onClose, onSold }: any) {
   };
 
   const handleSell = async () => {
-    await fetch("/api/items", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(sales),
-    });
-    onSold();
+    console.log("In sellmodel" + sales);
+    // await fetch("/api/inventory", {
+    //   method: "PATCH",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(sales),
+    // });
+    onSold(sales);
     onClose();
   };
 
